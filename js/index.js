@@ -37,23 +37,50 @@ const siteContent = {
   },
 };
 //CY Code Starts here
-let navItems = Array.from(document.querySelectorAll('nav a'));
+let navItemsArray = Array.from(document.querySelectorAll('nav a'));
 
-navItems[0].textContent = siteContent['nav']['nav-item-1'];
-navItems[1].textContent = siteContent['nav']['nav-item-2'];
-navItems[2].textContent = siteContent['nav']['nav-item-3'];
-navItems[3].textContent = siteContent['nav']['nav-item-4'];
-navItems[4].textContent = siteContent['nav']['nav-item-5'];
-navItems[5].textContent = siteContent['nav']['nav-item-6'];
-
-console.log(navItems[0])
-
-let cta = document.getElementById('cta-img');
-cta.src = siteContent['cta']['img-src'];
+navItemsArray[0].textContent = siteContent['nav']['nav-item-1'];
+navItemsArray[1].textContent = siteContent['nav']['nav-item-2'];
+navItemsArray[2].textContent = siteContent['nav']['nav-item-3'];
+navItemsArray[3].textContent = siteContent['nav']['nav-item-4'];
+navItemsArray[4].textContent = siteContent['nav']['nav-item-5'];
+navItemsArray[5].textContent = siteContent['nav']['nav-item-6'];
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+let cta = document.getElementById('cta-img');
+cta.src = siteContent['cta']['img-src'];
+
+let ctaText = document.querySelector('h1');
+ctaText.textContent = siteContent['cta']['h1'];
+
+let button = document.querySelector('button');
+button.textContent = siteContent['cta']['button'];
+
 let middleImg = document.getElementById('middle-img');
 middleImg.src = siteContent['main-content']['middle-img-src'];
+
+//changing all the H4s
+let allH4 = document.querySelectorAll('.text-content h4')
+
+let featuresH4 = allH4[0]
+featuresH4.textContent = siteContent['main-content']['features-h4'];
+
+let aboutH4 = allH4[1]
+aboutH4.textContent = siteContent['main-content']['about-h4'];
+
+let servicesH4 = allH4[2]
+servicesH4.textContent = siteContent['main-content']['services-h4'];
+
+let productH4 = allH4[3]
+productH4.textContent = siteContent['main-content']['product-h4'];
+
+let visionH4 = allH4 [4]
+visionH4.textContent = siteContent['main-content']['vision-h4'];
+
+//changing all the P tags
+// let allP = document.querySelectorAll('text-content p');
+let featuresP = document.querySelector('text-content p:nth-of-type(1)');
+featuresP.textContent = 'Lorem ipsum';
