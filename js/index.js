@@ -36,7 +36,24 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
+//CY Code Starts here
+let navItems = Array.from(document.querySelectorAll('nav a'));
+
+navItems[0].textContent = siteContent['nav']['nav-item-1'];
+navItems[1].textContent = siteContent['nav']['nav-item-2'];
+navItems[2].textContent = siteContent['nav']['nav-item-3'];
+navItems[3].textContent = siteContent['nav']['nav-item-4'];
+navItems[4].textContent = siteContent['nav']['nav-item-5'];
+navItems[5].textContent = siteContent['nav']['nav-item-6'];
+
+console.log(navItems[0])
+
+let cta = document.getElementById('cta-img');
+cta.src = siteContent['cta']['img-src'];
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let middleImg = document.getElementById('middle-img');
+middleImg.src = siteContent['main-content']['middle-img-src'];
