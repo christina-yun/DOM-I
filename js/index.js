@@ -37,6 +37,10 @@ const siteContent = {
   },
 };
 //CY Code Starts here
+//linebreak
+let br = '/n';
+
+//Nav
 let navItemsArray = Array.from(document.querySelectorAll('nav a'));
 
 navItemsArray[0].textContent = siteContent['nav']['nav-item-1'];
@@ -53,9 +57,11 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let cta = document.getElementById('cta-img');
 cta.src = siteContent['cta']['img-src'];
 
+//H1
 let ctaText = document.querySelector('h1');
-ctaText.textContent = siteContent['cta']['h1'];
+let ctaSplit = ctaText.textContent = siteContent['cta']['h1'].split();
 
+//button
 let button = document.querySelector('button');
 button.textContent = siteContent['cta']['button'];
 
@@ -65,22 +71,64 @@ middleImg.src = siteContent['main-content']['middle-img-src'];
 //changing all the H4s
 let allH4 = document.querySelectorAll('.text-content h4')
 
-let featuresH4 = allH4[0]
+let featuresH4 = allH4[0];
 featuresH4.textContent = siteContent['main-content']['features-h4'];
 
-let aboutH4 = allH4[1]
+let aboutH4 = allH4[1];
 aboutH4.textContent = siteContent['main-content']['about-h4'];
 
-let servicesH4 = allH4[2]
+let servicesH4 = allH4[2];
 servicesH4.textContent = siteContent['main-content']['services-h4'];
 
-let productH4 = allH4[3]
+let productH4 = allH4[3];
 productH4.textContent = siteContent['main-content']['product-h4'];
 
-let visionH4 = allH4 [4]
+let visionH4 = allH4[4];
 visionH4.textContent = siteContent['main-content']['vision-h4'];
 
 //changing all the P tags
-// let allP = document.querySelectorAll('text-content p');
-let featuresP = document.querySelector('text-content p:nth-of-type(1)');
-featuresP.textContent = 'Lorem ipsum';
+let allP = document.querySelectorAll('.text-content p');
+// console.log(allP);
+
+let featuresP = document.querySelector('.text-content:nth-of-type(1) p');
+featuresP.textContent = siteContent['main-content']['features-content'];
+
+let aboutP = document.querySelector('.text-content:nth-of-type(2) p');
+ aboutP.textContent = siteContent['main-content']['about-content'];
+
+ let servicesP = document.querySelector('.bottom-content .text-content:nth-of-type(1) p');
+ servicesP.textContent = siteContent['main-content']['services-content'];
+
+ let productP = document.querySelector('.bottom-content .text-content:nth-of-type(2) p');
+ productP.textContent = siteContent['main-content']['product-content'];
+
+ let visionP = document.querySelector('.bottom-content .text-content:nth-of-type(3) p');
+ visionP.textContent = siteContent['main-content']['vision-content'];
+
+ //Alternate Way of writing content stuff
+// let featuresP = allP[0];
+// featuresP.textContent = siteContent['main-content']['features-content'];
+
+// let aboutP = allP[1];
+// aboutP.textContent = siteContent['main-content']['about-content'];
+
+// let servicesP = allP[2];
+// servicesP.textContent = siteContent['main-content']['services-content'];
+
+// let productP = allP[3];
+// productP.textContent = siteContent['main-content']['product-content'];
+
+// let visionP = allP[4];
+// visionP.textContent = siteContent['main-content']['vision-content'];
+
+let contactH4 = document.querySelector('.contact h4')
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+let streetAdd = document.getElementsByClassName('contact p')
+console.log(streetAdd)
+
+streetAdd.innerHTML = '123 Way 456 Street <br> Somewhere, USA';
+
+// let phoneNum = document.querySelector('.contact p:nth-of-type(2)');
+// phoneNum.textContent = 'siteContent['contact']['phone'];'
+
