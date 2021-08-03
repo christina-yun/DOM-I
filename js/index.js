@@ -41,14 +41,28 @@ const siteContent = {
 let br = '/n';
 
 //Nav
-let navItemsArray = Array.from(document.querySelectorAll('nav a'));
+let navItems = document.querySelectorAll('nav a');
 
-navItemsArray[0].textContent = siteContent['nav']['nav-item-1'];
-navItemsArray[1].textContent = siteContent['nav']['nav-item-2'];
-navItemsArray[2].textContent = siteContent['nav']['nav-item-3'];
-navItemsArray[3].textContent = siteContent['nav']['nav-item-4'];
-navItemsArray[4].textContent = siteContent['nav']['nav-item-5'];
-navItemsArray[5].textContent = siteContent['nav']['nav-item-6'];
+navItems.forEach(function(item){
+  item.style.color = 'green'
+});
+const newNav = document.createElement('a');
+newNav.textContent = 'Kittens';
+document.querySelector('nav').appendChild(newNav);
+newNav.style.color = 'green';
+
+const newNav2 = document.createElement('a');
+newNav2.textContent = 'Puppies';
+document.querySelector('nav').prepend(newNav2);
+newNav2.style.color = 'green';
+
+
+navItems[0].textContent = siteContent['nav']['nav-item-1'];
+navItems[1].textContent = siteContent['nav']['nav-item-2'];
+navItems[2].textContent = siteContent['nav']['nav-item-3'];
+navItems[3].textContent = siteContent['nav']['nav-item-4'];
+navItems[4].textContent = siteContent['nav']['nav-item-5'];
+navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
@@ -124,11 +138,12 @@ let aboutP = document.querySelector('.text-content:nth-of-type(2) p');
 let contactH4 = document.querySelector('.contact h4')
 contactH4.textContent = siteContent['contact']['contact-h4'];
 
-let streetAdd = document.getElementsByClassName('contact p')
-console.log(streetAdd)
+let contact = document.querySelectorAll('.contact p')
+contact[0].innerHTML = '123 Way 456 Street <br> Somewhere, USA';
 
-streetAdd.innerHTML = '123 Way 456 Street <br> Somewhere, USA';
+contact[1].innerHTML = siteContent['contact']['phone'];
 
-// let phoneNum = document.querySelector('.contact p:nth-of-type(2)');
-// phoneNum.textContent = 'siteContent['contact']['phone'];'
+contact[2].innerHTML = siteContent['contact']['email'];
 
+let copyright = document.querySelector('footer p');
+copyright.textContent = siteContent['footer']['copyright'];
